@@ -1,0 +1,1 @@
+Antes de hacer npm start, elegir la carpeta src que debe ser renderizada borrándole el "-" y lo que esté después

@@ -1,0 +1,80 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.credit-card {
+  background-color: #2854a1;
+  border-radius: 14px;
+  width: 280px;
+  height: 175px;
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container-left {
+  text-align: left;
+}
+.container-right {
+  text-align: right;
+}
+.container-center {
+  text-align: center;
+}
+
+.bank-name {
+  display: inline-block;
+  color: white;
+  font-weight: 400;
+  font-size: 30px;
+  font-family: 'Roboto';
+  margin-top: 5px;
+}
+
+.card-number-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-number {
+  color: white;
+  font-family: monospace;
+  font-size: 20px;
+  margin: 0;
+}
+.card-number-small {
+  color: white;
+  font-size: 10px;
+  margin: 0;
+}
+
+.expiration {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.expiration p {
+  display: inline-block;
+  margin: 0;
+  margin-right: 8px;
+  color: white;
+  font-size: 8px;
+}
+.expiration span {
+  display: inline-block;
+  color: white;
+  font-family: monospace;
+  line-height: 0.8;
+  font-size: 18px;
+}
+
+.cardholder {
+  color: white;
+  margin: 0;
+  font-family: monospace;
+  font-size: 15px;
+}

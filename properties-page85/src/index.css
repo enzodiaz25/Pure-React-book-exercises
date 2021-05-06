@@ -1,0 +1,60 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.line-mail {
+  max-width: 700px;
+  border: 1px solid darkgray;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.line-content {
+  flex: 1;
+  padding-right: 8px;
+}
+
+.line-mail p {
+  margin: 0;
+  line-height: 1.4;
+}
+.line-mail input {
+  margin: 0px 12px 0 0;
+}
+
+.line-header {
+  display: flex;
+  font-family: sans-serif;
+  color: black;
+  font-size: 15px;
+}
+
+.line-date {
+  text-align: right;
+  flex: 1;
+}
+
+.line-message {
+  color: rgb(121, 121, 121);
+}
+
+.name-subject-flex {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.name-subject-flex p:first-child {
+  margin-right: 30px;
+}
+
+.pin-check-container {
+  display: flex;
+  align-items: center;
+  margin: 0 12px;
+}

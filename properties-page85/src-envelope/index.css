@@ -1,0 +1,31 @@
+.envelope-container {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.person-data {
+  line-height: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.return-adress {
+  margin-top: 100px;
+  text-align: center;
+  margin-bottom: 200px;
+}
+
+.stamp-container {
+  border: 1px solid gray;
+  border-radius: 2px;
+  max-width: 100px;
+}
+.stamp-container img {
+  max-width: 100%;
+}

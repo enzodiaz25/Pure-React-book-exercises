@@ -1,0 +1,55 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 23px;
+}
+p {
+  font-family: serif;
+  font-size: 16px;
+}
+
+.poster {
+  background-color: black;
+  max-width: 400px;
+  padding: 25px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid blue;
+}
+
+.image-container {
+  border: 1px solid blue;
+  max-width: 300px;
+}
+.image-container img {
+  /* Las imagenes son renderizadas inline, es decir que siempre se les asigna
+  un espacio como si fuesen una letra: ABcg. Notar que g cae tiene una porción
+  que cae por debajo de la línea, por eso se reserva un espacio en el lado inferior
+  al renderizar. Esto se puede evitar poniendole display: block.
+  Más información: https://stackoverflow.com/questions/5804256/image-inside-div-has-extra-space-below-the-image */
+  display: block;
+  width: 58%;
+  height: 100%;
+  /* Al ser display block, no va a alinearse en el centro con text-align (usado en el padre) */
+  margin: 0 auto;
+}
+
+.title, .text {
+  margin: 0;
+}
+.title {
+  margin-top: 6px;
+  color: blue;
+}
+.text {
+  margin-top: 6px;
+  color: white;
+  text-align: center;
+}
