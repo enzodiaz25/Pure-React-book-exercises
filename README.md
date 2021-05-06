@@ -1,7 +1,7 @@
 # Pure React book finished exercises
 
 Finished exercises for the book by Dave Ceddia.
-Each folder name follows this pattern: 
+Each folder name follows this pattern (except for "Tweet example", which is just a book example): 
 
 ```
 exerciseName-bookPage
