@@ -1,0 +1,14 @@
+button {
+    width: 300px;
+    height: 300px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px;
+}
+
+.light-on {
+    background-color: lightblue;
+}
+.light-off {
+    background-color: black;
+    color: white;
+}

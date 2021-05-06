@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", serif;
+}
+  
+.house {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 14px;
+    max-width: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+  
+.room {
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: #212121 0px 0px 4px;
+}
+  
+.room-name {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+  
+.room.light-on {
+    color: #ffffff;
+    background-color: #f44336;
+}
+.room.light-off {
+    background-color: #212121;
+    color: white;
+}
+  
+.room button {
+    background-color: white;
+    padding: 6px 14px;
+    border: none;
+    border-radius: 10px;
+    color: #212121;
+    outline: none;
+    cursor: pointer;
+}  

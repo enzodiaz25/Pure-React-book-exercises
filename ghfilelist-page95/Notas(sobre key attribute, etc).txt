@@ -1,0 +1,70 @@
+------------------- Sobre este error en React: -------------------
+[Error: ENOENT: no such file or directory, stat '/home/enzo/.steampath'] 
+
+Indica que hay un módulo que se intentó importar y no se encontró en la carpeta node_modules, por ello, Node intentó buscarlo en .steampath (en el home)
+
+------------------- Explicación "key" attribute -------------------
+
+Es necesario al renderizar un arreglo que se crea con, por ejemplo, "map", agregar una key="" que SEA ÚNICA a cada elemento.
+¿Por qué React necesita esto? Para entenderlo, primero ver el siguiente código:
+
+// Crea un array de objetos, donde cada objeto tiene value (un número) y un id (que en este caso es igual al número)
+const data = [1, 2, 3, 4, 5, 6, 7, 8].map(n => {
+	return {
+		value: n,
+		id: `id${n}`
+	}
+})
+
+function App() {
+	const [numbers, setNumbers] = useState(data)
+	
+	function renderItem(n, index) {
+		return(
+			// ESTA LÍNEA ES IMPORTANTE
+			<h1 key={index} onclick{() => deleteItem(n.id)}> {n.value} </h1> 
+		)
+	}
+	
+	function deleteItem(id) {
+		const filtered = numbers.filter(n => n.id !== id)
+		setNumbers(filtered)
+	}
+	
+	return (
+		<div className="App">
+			{numbers.map(renderItem)}
+		</div>
+	)
+}
+
+Lo que hace este componente es renderizar todos los números del array en diferentes h1. Hasta acá, no hay problemas.
+Cuando demos click en algún elemento, se ejecutará deleteItem y actualizará el array quitándole ese elemento (setNumbers(filtered)). Como se reemplazó el estado del componente, se vuelve a renderizar lo que está dentro del return. Al hacer numbers.map(renderItem), se vuelven a asignar las keys a los elementos. Anteriormente, las keys de los elementos eran estas:
+
+(recordar que el array resultante es un array de h1s)
+h1 value en el array resultante = [1, 2, 3, 4, 5, 6, 7, 8]
+keys                            =  0  1  2  3  4  5  6  7  (index)
+
+Como las keys se asignan en función del índice, entonces se vuelven a reasignar TODAS. Por ejemplo, si borramos el valor 1 del array, las keys ahora quedarán así:
+
+h1 value en el array resultante = [2, 3, 4, 5, 6, 7, 8]
+keys                            =  0  1  2  3  4  5  6
+
+Notar que la key del 2 antes era 1 y ahora es 0; la del 3 antes era 2 y ahora es 1, y así... Todas las keys cambiaron, así que React cree que debe actualizar TODOS los elementos de la lista en el DOM real.
+
+Esto se puede evitar si usamos unas keys que sean propias del objeto y no varíen. Es decir, que sean realmentes únicas.
+Entonces, en renderItems() tendríamos:
+
+<h1 key={n.id} onclick{() => deleteItem(n.id)}> {n.value} </h1>
+
+Como la key viene del mismo objeto donde está el número, cuando volvamos a ejecutar map no se verá modificada.
+
+[
+	{
+		n: 2,
+		id: 2
+	}
+	...
+]
+
+en renderItems, para el objeto con n: 2 la id siempre será 2.

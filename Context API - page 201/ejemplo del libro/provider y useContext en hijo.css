@@ -1,0 +1,11 @@
+.room {
+    width: 200px;
+    height: 200px;
+}
+.lit {
+    border: solid 1px black;
+}
+.dark {
+    background-color: black;
+    color: white;
+}

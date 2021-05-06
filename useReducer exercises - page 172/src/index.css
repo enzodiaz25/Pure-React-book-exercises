@@ -1,0 +1,32 @@
+.password {
+    font-size: 30px;
+    opacity: 0;
+    position: absolute;
+}
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 200px;
+    transition: all 0.3s ease-in-out;
+}
+.keypad button:last-child {
+    grid-column: 2 / 3;
+}
+
+button {
+    background-color: #333;
+    border: lightgrey 2px solid;
+    color: rgb(209, 181, 181);
+}
+
+.opacity-100 {
+    opacity: 100;
+    transition: all 0.8s ease-in-out;
+}
+.move-keyboard {
+    transform: translateY(50px);
+}
+
+.wrong-button {
+    background-color: red;
+}

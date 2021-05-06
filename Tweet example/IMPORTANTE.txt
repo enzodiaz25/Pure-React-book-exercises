@@ -1,0 +1,14 @@
+Antes de hacer npm start, elegir la carpeta src que debe ser renderizada borrándole el "-" y lo que esté después
+
+------- Nota sobre max-width y min-width --------
+
+max-width: Tamaño máximo que puede crecer, pero
+PUEDE ACHICARSE POR DEBAJO DE ESE VALOR.
+
+min-width: Tamaño mínimo que debe tener, pero
+PUEDE CRECER POR ENCIMA DE ESE VALOR.
+
+------- Nota sobre max-height -------
+
+¡¡¡Por ende, min-height puede estirarse si algo se está por salir de la caja!!!
+max-height bloquea el crecimiento de esa caja en altura, así que las letras o el contenido desbordaría. max-width, en cambio hace que el texto colapse hacia abajo.
